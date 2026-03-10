@@ -101,7 +101,7 @@ dependencies {
     //zxing
     //https://github.com/yipianfengye/android-zxingLibrary
     implementation 'cn.yipianfengye.android:zxing-library:2.2'
-
+    
     //文件选择
     implementation project(':filepicker')
     implementation project(':update')
