@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/match_parent_style"
+        android:orientation="vertical">
+
+        <include layout="@layout/ui_top_navigation_white" />
+        <TextView style="@style/new_ui_after_sale_tips" />
+
+        <!--        <com.google.android.material.tabs.TabLayout-->
+        <!--            android:id="@+id/mRecordTabLayout"-->
+        <!--            style="@style/ui_bottom_top"-->
+        <!--            app:layout_constraintLeft_toLeftOf="parent"-->
+        <!--            app:layout_constraintRight_toRightOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar" />-->
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/refreshLayout"
+            style="@style/ui_authority_fragment_recyleview"
+            android:layout_marginTop="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar"
+            app:srlEnableFooterFollowWhenLoadFinished="true"
+            app:srlEnableScrollContentWhenLoaded="true">
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlClassicsSpinnerStyle="Translate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/xRecyclerView"
+                style="@style/match_parent_style"
+                android:background="@color/white_text_color"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srlClassicsSpinnerStyle="Translate" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+
+</layout>

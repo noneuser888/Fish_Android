@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="WhiteAppTheme" parent="AppTheme">
+        <item name="colorPrimaryDark">@color/white_text_color</item>
+    </style>
+
+    <style name="FilePickerTheme"  parent="AppTheme" />
+
+
+    <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/font_size_16</item><!--toolbar标题字体大小-->
+        <item name="android:textColor">@color/white_text_color</item><!--toolbar标题字体颜色-->
+    </style>
+
+    <style name="Toolbar.TitleText.Black" parent="Toolbar.TitleText">
+        <item name="android:textColor">@color/main_text_color</item><!--toolbar标题字体颜色-->
+    </style>
+    <style name="theme_dialog_alert" parent="@android:style/Theme.Dialog">
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowFrame">@null</item>
+        <!-- 边框 -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 半透明 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 无标题 -->
+        <item name="android:windowBackground">@color/half_tran</item>
+        <!-- 背景透明 -->
+        <item name="android:backgroundDimEnabled">false</item>
+        <!-- 模糊 -->
+    </style>
+</resources>

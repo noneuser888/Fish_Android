@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="itemBean"
+            type="com.wantime.wbangapp.model.LoginAuthorityBean.ListBean.RecordsBean" />
+
+        <variable
+            name="itemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+
+        <variable
+            name="iFormClick"
+            type="com.wantime.wbangapp.ui.event.IFormListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ui_adapter_record_item"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/recordItem"
+            style="@style/ui_adapter_record_item_icon"
+            app:imgPath="@{itemBean.imageUrl}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recordName"
+            style="@style/ui_adapter_record_item_name"
+            android:text="@{itemBean.platformName}"
+            app:layout_constraintLeft_toRightOf="@+id/recordItem"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recordPrice"
+            style="@style/ui_adapter_record_item_desc"
+            android:layout_marginTop="5dp"
+            android:text='@{(itemBean.nickName.length>0)?(@string/ui_nick+itemBean.wxUserNickname):""}'
+            android:textColor="@color/bg_login_color"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/recordName" />
+
+        <TextView
+            android:id="@+id/recordTime"
+            style="@style/ui_adapter_record_item_desc"
+            android:text="@{itemBean.createTime}"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/recordPrice" />
+
+
+        <TextView
+            android:id="@+id/recordType"
+            style="@style/ui_adapter_record_item_name"
+            android:text='@{@string/ui_kou_fei+String.valueOf(itemBean.price)}'
+            android:textColor="@color/price_text_color"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--申诉button -->
+        <TextView
+            android:id="@+id/suButton"
+            style="@style/ui_adapter_record_item_ss_button"
+            android:gravity="center"
+            android:onClick="@{(view)->iFormClick.onFormPost(view,itemBean)}"
+            android:text="@string/ui_shensu"
+            android:visibility="@{itemBean.ssVisible}"
+            app:layout_constraintBottom_toBottomOf="@+id/recordTime"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <!--已经申诉button-->
+        <TextView
+            android:id="@+id/suFinishButton"
+            style="@style/ui_adapter_record_item_ss_button_finish"
+            android:text="@string/ui_shensu_finish"
+            android:visibility="@{itemBean.ssFinishVisible}"
+            app:layout_constraintBottom_toBottomOf="@+id/recordTime"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TextView
+            android:id="@+id/fjStateView"
+            style="@style/ui_adapter_record_item_fj_desc"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/suButton" />
+
+        <View
+            android:id="@+id/lineView"
+            android:layout_width="0dp"
+            android:layout_height="1px"
+            android:layout_marginTop="10dp"
+            android:background="@color/gray_line_color"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/fjStateView" />
+
+        <TextView
+            android:id="@+id/fjInfoView"
+            style="@style/ui_adapter_record_item_fj"
+            android:visibility="@{itemBean.infoVisible}"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/lineView" />
+
+        <TextView
+            android:id="@+id/fjDescView"
+            style="@style/ui_adapter_record_item_fj_desc"
+            android:text='@{(itemBean.info.length()>0)?itemBean.info:""}'
+            android:visibility="@{itemBean.infoVisible}"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/fjInfoView" />
+
+        <LinearLayout
+            android:id="@+id/recycleLinear"
+            style="@style/ui_adapter_record_item_linear"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName"
+            app:layout_constraintTop_toBottomOf="@+id/fjDescView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

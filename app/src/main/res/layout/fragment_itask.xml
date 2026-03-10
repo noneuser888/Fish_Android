@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/match_parent_style">
+
+        <include layout="@layout/ui_top_navigation" />
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/mRecordTabLayout"
+            style="@style/ui_bottom_top"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            style="@style/ui_fragment_task_recycle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mTopTabLayout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

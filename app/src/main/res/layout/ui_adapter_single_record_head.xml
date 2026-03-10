@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/ui_common_wmatch_hwrap"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/ui_single_tip_front"
+            style="@style/ui_platform_list_tip"
+            android:text="@string/ui_single_record_tip1" />
+
+        <include
+            android:id="@+id/singleHeadItem"
+            layout="@layout/ui_adapter_single_record_head_item" />
+
+        <TextView
+            android:id="@+id/ui_single_tip_end"
+            style="@style/ui_platform_list_tip"
+            android:layout_marginTop="5dp"
+            android:text="@string/ui_single_record_tip2" />
+    </LinearLayout>
+</layout>

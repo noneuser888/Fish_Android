@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="iFBean"
+            type="com.wantime.wbangapp.model.bind.IbindForgetBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/match_parent_style">
+
+        <include layout="@layout/ui_top_navigation" />
+
+        <LinearLayout
+            style="@style/ui_common_wmatch_hzero"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    android:id="@+id/userName"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/accountText"
+                    android:inputType="phone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/userValue"
+                    style="@style/ui_iplatform_input_title"
+                    android:hint="@string/accountText"
+                    android:minWidth="200dp"
+                    android:text="@={iFBean.username}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    android:id="@+id/passText"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/passwordText"
+
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/passValue"
+                    style="@style/ui_iplatform_input_title"
+                    android:hint="@string/passwordText"
+                    android:inputType="textPassword"
+                    android:minWidth="200dp"
+                    android:text="@={iFBean.password}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    android:id="@+id/vertifyText"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/vertifyText"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/vertifyValue"
+                    style="@style/ui_iplatform_input_title"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginRight="10dp"
+                    android:hint="@string/vertifyText"
+                    android:minWidth="200dp"
+                    android:text="@={iFBean.code}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toLeftOf="@+id/vertifyTip"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/vertifyTip"
+                    style="@style/wrap_parent_style"
+                    android:text="@string/vertifyGet"
+                    android:textColor="@color/ui_item_select_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/forgetButton"
+                style="@style/ui_forget_buttton_style" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

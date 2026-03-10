@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_parent_style">
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        style="@style/match_parent_style"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+<!--    <com.google.android.material.tabs.TabLayout-->
+<!--        android:id="@+id/mBottomTabLayout"-->
+<!--        style="@style/ui_bottom_nav"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        app:tabBackground="@android:color/transparent"-->
+<!--        app:tabRippleColor="@android:color/transparent" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

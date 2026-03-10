@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout style="@style/ui_adapter_record_item"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/recordItem"
+        style="@style/ui_adapter_record_item_icon"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recordName"
+        style="@style/ui_adapter_record_item_name"
+        app:layout_constraintLeft_toRightOf="@+id/recordItem"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/recordPrice"
+        style="@style/ui_adapter_record_item_desc"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/price_text_color"
+        app:layout_constraintLeft_toLeftOf="@+id/recordName"
+        app:layout_constraintTop_toBottomOf="@+id/recordName" />
+
+    <TextView
+        android:id="@+id/recordTime"
+        style="@style/ui_adapter_record_item_desc"
+        android:layout_marginTop="5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/recordName"
+        app:layout_constraintTop_toBottomOf="@+id/recordPrice" />
+
+
+    <TextView
+        android:id="@+id/recordType"
+        style="@style/ui_adapter_record_item_name"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <!--ID-->
+    <TextView
+        android:id="@+id/IdText"
+        style="@style/ui_adapter_record_item_desc"
+        app:layout_constraintBottom_toBottomOf="@+id/recordPrice"
+        app:layout_constraintRight_toRightOf="parent" />
+    <!--昵称 -->
+    <TextView
+        android:id="@+id/nickName"
+        style="@style/ui_adapter_record_item_desc"
+        android:textColor="@color/bg_login_color"
+        app:layout_constraintBottom_toBottomOf="@+id/recordTime"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:visibility="gone"
+        android:background="@color/gray_line_color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="@+id/recordName"
+        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

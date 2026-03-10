@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/ui_platform_header_title">
+
+    <TextView
+        android:id="@+id/platformTitle"
+        style="@style/ui_platform_list_title" />
+
+    <TextView
+        android:id="@+id/ui_platform_list_tip"
+        style="@style/ui_platform_list_tip"
+        android:layout_marginTop="2dp" />
+
+</LinearLayout>

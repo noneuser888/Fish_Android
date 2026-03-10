@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="iPagerItem"
+            type="com.wantime.wbangapp.model.PlatformBean.BannerBean" />
+
+        <variable
+            name="xItemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+    </data>
+
+    <ImageView
+        android:id="@+id/pagerItem"
+        style="@style/ui_adapter_pager_item"
+        android:onClick="@{(view)->xItemClick.onItemClick(view,iPagerItem)}"
+        app:imgPath="@{iPagerItem.imgUrl}" />
+</layout>

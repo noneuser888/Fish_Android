@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/wrap_parent_style"
+    android:layout_width="match_parent"
+    android:layout_height="140dp"
+    android:layout_gravity="bottom|center_horizontal"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintLeft_toLeftOf="parent">
+
+    <TextView
+        android:id="@+id/toolTips"
+        style="@style/ui_fragment_icapture_tools_tip"
+        android:gravity="center_horizontal"
+        android:text="@string/ui_authority_app"
+        android:visibility="gone"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <View
+        android:id="@+id/middleView"
+        style="@style/wrap_parent_style"
+        android:layout_width="40dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/iPhoto"
+        style="@style/ui_fragment_icapture_tools_img"
+        android:layout_marginTop="30dp"
+        android:drawableTop="@mipmap/pht"
+        app:layout_constraintRight_toLeftOf="@+id/middleView"
+        app:layout_constraintTop_toBottomOf="@+id/toolTips" />
+
+    <TextView
+        android:id="@+id/iFlash"
+        style="@style/ui_fragment_icapture_tools_img"
+        android:drawableTop="@mipmap/saoyisaokaideng"
+        app:layout_constraintLeft_toRightOf="@+id/middleView"
+        app:layout_constraintTop_toTopOf="@+id/iPhoto" />
+
+    <RadioGroup
+        android:id="@+id/oldOrNewGroup"
+        style="@style/wrap_parent_style"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iPhoto">
+
+        <RadioButton
+            android:id="@+id/mNewButton"
+            style="@style/ui_old_or_new_select"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:checked="true"
+            android:text="@string/wx_key_text" />
+
+        <RadioButton
+            android:id="@+id/mOldButton"
+            style="@style/ui_old_or_new_select"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/wx_key_text1" />
+    </RadioGroup>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

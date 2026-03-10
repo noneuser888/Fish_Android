@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ui_exclusive_adapter_head">
+
+        <ImageView
+            android:id="@+id/headView"
+            style="@style/ui_exclusive_adapter_head_Img"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/adLayout"
+            style="@style/ui_authority_fragment_ad_layout"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headView">
+
+            <ImageView style="@style/ui_authority_fragment_ad_icon" />
+
+            <TextView
+                android:id="@+id/adText"
+                style="@style/ui_authority_fragment_ad_text"
+                android:lines="2"
+                android:maxLines="2"
+                android:singleLine="false"
+                android:ellipsize="none"
+                android:text="@string/platformlisttip1" />
+        </LinearLayout>
+
+        <include layout="@layout/ui_adapter_exclusive_head_line_number" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

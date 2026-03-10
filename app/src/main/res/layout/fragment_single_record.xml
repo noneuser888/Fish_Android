@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        style="@style/match_parent_style"
+        android:background="@color/gray_text_color4"
+        android:orientation="vertical">
+
+        <com.wantime.wbangapp.ui.widget.SearchView
+            android:id="@+id/searchView"
+            style="@style/ui_platform_search"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            style="@style/ui_common_wmatch_hzero"
+            android:layout_weight="1">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                style="@style/match_parent_style"
+                app:srlEnableFooterFollowWhenLoadFinished="true"
+                app:srlEnableScrollContentWhenLoaded="true">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlClassicsSpinnerStyle="Translate" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    style="@style/ui_platform_fragment_recycle"
+                    android:background="@color/white_text_color"
+                    android:layout_height="match_parent"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlClassicsSpinnerStyle="Translate" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>

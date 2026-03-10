@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="iFormPost"
+            type="com.wantime.wbangapp.ui.event.IFormListener" />
+    </data>
+
+    <LinearLayout
+        style="@style/match_parent_style"
+        android:background="@color/gray_text_color4"
+        android:orientation="vertical">
+
+        <include
+            android:id="@+id/rechargeRecordHead"
+            layout="@layout/new_ui_recharge_record_adapter_head" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            style="@style/match_parent_style"
+            android:background="@color/white_text_color">
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/refreshLayout"
+                style="@style/ui_authority_fragment_recyleview"
+                android:layout_height="match_parent"
+                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlClassicsSpinnerStyle="Translate" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/mRecyclerView"
+                    style="@style/match_parent_style"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srlClassicsSpinnerStyle="Translate" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</layout>

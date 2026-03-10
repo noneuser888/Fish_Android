@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+<!--    <data>-->
+
+<!--        <variable-->
+<!--            name="xItemClick"-->
+<!--            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />-->
+
+<!--        <variable-->
+<!--            name="xUserBean"-->
+<!--            type="com.wantime.wbangapp.model.UserBean" />-->
+<!--    </data>-->
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ui_common_wmatch_hwrap">
+
+
+        <include
+            android:id="@+id/mNavigationBar"
+            layout="@layout/ui_top_navigation_white" />
+
+        <include
+            android:id="@+id/personInfoLayout"
+            layout="@layout/new_ui_head_user_info_show" />
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/userMyAgent"-->
+<!--            style="@style/new_ui_agent_adapter_head_my_agent"-->
+<!--            android:layout_marginStart="20dp"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--          -->
+<!--            app:layout_constraintLeft_toLeftOf="parent"-->
+<!--            app:layout_constraintTop_toBottomOf="@+id/personInfoLayout" />-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

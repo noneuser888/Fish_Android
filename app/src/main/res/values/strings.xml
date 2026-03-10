@@ -1,0 +1,254 @@
+<resources>
+    <string name="app_name" translatable="false">橘子</string>
+    <string-array name="app_nav">
+        <item>橘子授权</item>
+        <item>平台列表</item>
+        <item>我的</item>
+    </string-array>
+
+    <string-array name="record">
+        <item>登录授权</item>
+        <item>专属对接授权</item>
+        <item>代绑授权</item>
+    </string-array>
+    <string-array name="new_ui_main_menus">
+        <item>修改昵称</item>
+        <item>常见问题</item>
+        <item>账户类型</item>
+        <item>创建子账户</item>
+        <item>卡密充值</item>
+        <item>退出登录</item>
+    </string-array>
+
+    <string-array name="new_ui_account_menus">
+        <item>普通账号</item>
+        <item>高级账号</item>
+        <item>专属账号</item>
+    </string-array>
+
+    <string-array name="new_ui_main_menus_agent">
+        <item>资金明细</item>
+    </string-array>
+
+    <string-array name="new_ui_main_menus_user">
+        <item>资金明细</item>
+<!--        <item>代理邀请</item>-->
+    </string-array>
+
+    <string-array name="new_ui_main_menus_sec_user">
+        <item>资金明细</item>
+<!--        <item>代理升级</item>-->
+    </string-array>
+
+    <string name="loginPrice_yj" translatable="false">一键授权(元)\n￥</string>
+    <string name="loginPrice_zs" translatable="false">专属对接(元)\n￥</string>
+    <string name="loginPrice_Qr" translatable="false">二维码(元)\n￥</string>
+
+    <string name="permission_request" translatable="false">该应用正常运行，需要一些基本权限，请开启！</string>
+    <string name="please_input_name" translatable="false">请输入用户名</string>
+    <string name="please_input_phone" translatable="false">请输入手机号</string>
+    <string name="please_input_pass" translatable="false">请输入密码</string>
+    <string name="please_input_pass_again" translatable="false">请再次输入密码</string>
+    <string name="please_input_mark" translatable="false">请输入备注</string>
+    <string name="please_input_email" translatable="false">请输入邮箱</string>
+    <string name="please_input_iv_code" translatable="false">请输入邀请码</string>
+    <string name="login_text" translatable="false">登录</string>
+    <string name="register_text" translatable="false">注册</string>
+    <string name="forget_text" translatable="false">忘记密码</string>
+    <string name="todayTitle" translatable="false">今日好文</string>
+    <string name="todayMore" translatable="false">查看更多</string>
+    <string name="saoma" translatable="false">扫码</string>
+    <string name="cause" translatable="false">教程</string>
+    <string name="wei_cause" translatable="false">橘子教程</string>
+    <string name="apply" translatable="false">申请</string>
+
+    <string name="platformlist" translatable="false">平台列表</string>
+    <string name="platformlisttip" translatable="false">选择错误将不会跳转且会扣费，所以请务必选择正确的与之对应的图标和文字！！</string>
+    <string name="platformlisttip1" translatable="false"><font color='#F13737'>选择错误将不会跳转且会扣费</font><br /><font color='#ffffff'>，所以请务必选择正确的与之对应的图标和文字！！</font></string>
+    <string name="ui_search" translatable="false">搜索</string>
+    <string name="ui_login_text" translatable="false">立即登录</string>
+    <string name="ui_register_text" translatable="false">立即注册</string>
+    <string-array name="secondTitle">
+        <item>授权记录</item>
+        <item>我发布的任务</item>
+    </string-array>
+    <string name="ui_my_task_list" translatable="false">我发布的任务</string>
+
+    <string name="ui_platform_name" translatable="false">平台名字</string>
+    <string name="ui_platform_nick" translatable="false">平台微信昵称</string>
+    <string name="ui_platform_icon" translatable="false">平台图片</string>
+    <string name="ui_platform_contract" translatable="false">联系方式</string>
+    <string name="ui_platform_type" translatable="false">平台类型</string>
+    <string name="ui_platform_info" translatable="false">平台信息</string>
+    <string name="ui_platform_login" translatable="false">登录授权</string>
+    <string name="ui_platform_proxy" translatable="false">代理授权</string>
+    <!--check tip -->
+    <string name="ui_tip_user_name_not_null" translatable="false">用户名称不能为空！</string>
+    <string name="ui_tip_user_pass_not_null" translatable="false">用户密码不能为空！</string>
+    <string name="ui_tip_platform_name" translatable="false">请输入平台名字</string>
+    <string name="ui_tip_contract" translatable="false">请输入联系方式，QQ/微信</string>
+    <string name="ui_tip_platform_info_tip" translatable="false">请输入关于该平台的简要描述，同时请尽量提供下载链接，以便客服添加。</string>
+    <string name="ui_tip_platform_cause_tip" translatable="false">打开您需要授权的App----->微信授权----->一键授权----->橘子自动采集新平台的信息----->申请添加。</string>
+
+    <string name="confirm" translatable="false">确认</string>
+    <string name="close" translatable="false">关闭</string>
+    <string name="cancel" translatable="false">取消</string>
+    <string-array name="itask">
+        <item name="processIng">进行中</item>
+        <item name="finishIng">已完成</item>
+    </string-array>
+    <string name="ui_mark" translatable="false">备注：</string>
+    <string name="ui_kou_fei" translatable="false">扣费：</string>
+    <string name="ui_id" translatable="false">ID：</string>
+    <string name="ui_nick" translatable="false">昵称：</string>
+    <string name="ui_shensu" translatable="false">申诉</string>
+    <string name="ui_shensu_finish" translatable="false">已申诉</string>
+    <string name="ui_shensu_failed" translatable="false">申诉失败</string>
+    <string name="ui_shensu_record" translatable="false">申诉记录</string>
+    <string name="ui_fj_info" translatable="false">附加信息</string>
+    <string name="ui_exist_login_title" translatable="false">退出登录</string>
+    <string name="ui_exist_login_title_desc" translatable="false">您确定要退出登录吗？</string>
+    <string name="ui_appeal_description" translatable="false">申述原因：</string>
+    <string name="ui_appeal_refuse" translatable="false">拒绝原因：</string>
+    <string name="ui_price_front" translatable="false">-</string>
+    <string name="ui_exclusive_list" translatable="false">专属对接平台列表</string>
+    <string name="ui_exclusive_least" translatable="false">账号租赁限时：</string>
+    <string name="ui_exclusive_least_min" translatable="false">分钟</string>
+    <string name="ui_single_price" translatable="false">单价：</string>
+    <string name="ui_online_number" translatable="false">在线人数：</string>
+    <string name="ui_online_number_1" translatable="false">在线接单人数：</string>
+    <string name="ui_saomiao_change" translatable="false">切换</string>
+    <string name="ui_saomiao_repeat" translatable="false">复扫</string>
+    <string name="ui_authority_title" translatable="false">授权平台切换</string>
+    <string name="ui_authority_content" translatable="false">您将切换授权平台为 PC端 授权</string>
+
+    <string name="ui_appeal_task_id" translatable="false">申诉任务ID</string>
+    <string name="ui_appeal_task_reason" translatable="false">申诉原因</string>
+    <string name="ui_appeal_task_hint" translatable="false">输入申诉原因，至少10个</string>
+    <string name="ui_appeal_submit" translatable="false">提交申诉</string>
+    <string name="ui_appeal_result" translatable="false">查看申诉结果></string>
+    <string name="ui_appeal_tips" translatable="false">申诉说明：\n确定是辅助成功的订单，却被商家判定为失败，需要在四十分钟内尽快申诉,防止超过申诉时间。</string>
+
+    <string name="header_scrolling_behavior" translatable="false">com.wantime.wbangapp.ui.widget.HeaderScrollingBehavior</string>
+    <string name="header_float_behavior" translatable="false">com.wantime.wbangapp.ui.widget.HeaderFloatBehavior</string>
+    <string name="ui_appeal_reason_tips" translatable="false">请填写申诉说明！</string>
+    <string name="ui_appeal_task_tips" translatable="false">没有任务ID！</string>
+
+    <string name="ui_authority_app" translatable="false">APP端授权</string>
+    <string name="ui_authority_pc" translatable="false">PC、网页端授权</string>
+    <string name="ui_my_email" translatable="false">我的邮箱</string>
+
+    <string name="wx_zs_text" translatable="false">复扫</string>
+    <string name="wx_key_text" translatable="false">新号</string>
+    <string name="wx_key_text1" translatable="false">老号</string>
+    <string name="wx_qr_text" translatable="false">显示二维码</string>
+    <string name="ui_single_record_tip1" translatable="false">当前选择授权的记录（资源均为外部对接，无法保证授权账号一直在线）</string>
+    <string name="ui_single_record_tip2" translatable="false">历史授权记录（点击下方选择需要恢复的授权记录）</string>
+    <string name="ui_param_error" translatable="false">参数错误！</string>
+    <string name="ui_qrcode_error" translatable="false">二维码识别错误，请刷新后再试！</string>
+    <string name="ui_authority_failed" translatable="false">授权失败，请重新再试！</string>
+    <string name="ui_zs_waiting" translatable="false">请耐心等待任务被接受....</string>
+    <string name="ui_nee_over_tips" translatable="false">请开启弹窗！</string>
+    <string name="ui_tip_jump" translatable="false">点击跳过</string>
+    <string name="ui_weibang_xp" translatable="false">此应用仅支持Root版本,请下载安装（橘子XP版本）！</string>
+    <string name="ui_system_title" translatable="false">系统提示</string>
+    <string name="ui_platform_no_exist" translatable="false">当前尚未被橘子收录，您可以申请开通此应用！</string>
+    <string name="ui_platform_name_tips" translatable="false">请填写平台名称！</string>
+    <string name="ui_platform_contract_tips" translatable="false">请留下您的联系方式！</string>
+    <string name="w3" translatable="false">分享</string>
+    <string name="w2" translatable="false">时间</string>
+
+
+    <string name="accountText" translatable="false">账号</string>
+    <string name="passwordText" translatable="false">新密码</string>
+    <string name="vertifyText" translatable="false">验证码</string>
+    <string name="vertifyGet" translatable="false">获取验证码</string>
+
+    <string name="please_input_account" translatable="false">请输入账号！</string>
+    <string name="please_input_password" translatable="false">请输入密码！</string>
+    <string name="please_input_vertify" translatable="false">请输入验证码</string>
+    <string name="find_password" translatable="false">找回密码</string>
+
+    <string name="email_send_out" translatable="false">验证码已经发送到您的邮箱里面！</string>
+    <string name="ui_realname_name" translatable="false">真实姓名</string>
+    <string name="ui_realname_code" translatable="false">身份证号</string>
+    <string name="ui_realname_tip" translatable="false">您的账号未进行实名认证，请完善您的身份信息</string>
+    <string name="please_input_realname" translatable="false">请输入真实姓名</string>
+    <string name="please_input_code" translatable="false">请输入身份证号</string>
+    <string name="please_input_submit" translatable="false">提交</string>
+    <string name="please_select_tip" translatable="false">我已阅读实名认证相关协议</string>
+    <string name="ui_title_register" translatable="false">用户注册</string>
+    <string name="ui_not_real_name_tips" translatable="false">系统检测到您当前的账户尚未实名认证，请先实名认证后再使用！</string>
+
+    <!--new ui-->
+    <string name="new_ui_platform" translatable="false">平台列表</string>
+    <string name="new_ui_grant_record" translatable="false">授权记录</string>
+    <string name="new_ui_agent_manager" translatable="false">代理管理</string>
+    <string name="new_ui_agent_manager_xg" translatable="false">代理相关</string>
+    <string name="new_ui_user_manager" translatable="false">用户管理</string>
+    <string name="new_ui_link_copy" translatable="false">复制</string>
+    <string name="new_ui_today" translatable="false">每日推荐项目</string>
+    <string name="new_ui_protol" translatable="false">《用户协议》和免责申明</string>
+    <string name="new_ui_protol_tip" translatable="false">我已详细阅读并同意</string>
+    <string name="new_ui_my_agent" translatable="false">我的代理</string>
+    <string name="new_ui_my_user" translatable="false">我的用户</string>
+    <string name="new_ui_become_agent" translatable="false">成为代理</string>
+    <string name="new_ui_recharge_value_10" translatable="false">10元</string>
+    <string name="new_ui_recharge_value_30" translatable="false">30元</string>
+    <string name="new_ui_recharge_value_50" translatable="false">50元</string>
+    <string name="new_ui_recharge_value_100" translatable="false">100元</string>
+    <string name="new_ui_recharge_value_500" translatable="false">500元</string>
+    <string name="new_ui_recharge_value_1000" translatable="false">1000元</string>
+    <string name="new_ui_custom_value" translatable="false">自定义：</string>
+    <string name="new_ui_entery_recharge" translatable="false">请输入1~9999的整型</string>
+    <string name="new_ui_recharge_button" translatable="false">充值</string>
+    <string name="new_ui_agree_protol" translatable="false">请先同意用户服务协议</string>
+    <string name="new_ui_please_enter_name" translatable="false">请填写用户名！</string>
+    <string name="new_ui_pass_word_not_null" translatable="false">密码不能为空！</string>
+    <string name="new_ui_invite_code_not_null" translatable="false">邀请码不能为空！</string>
+    <string name="new_ui_vertify_code_not_null" translatable="false">验证码不能为空！</string>
+    <string name="new_ui_not_same_password" translatable="false">两次输入密码不一样！</string>
+    <string name="new_ui_my_ad_link" translatable="false">邀请链接：</string>
+    <string name="new_ui_order_id" translatable="false">订单号：</string>
+    <string name="new_ui_new_nick_name" translatable="false">请填写新昵称</string>
+    <string name="new_ui_input_key_charge" translatable="false">请填写充值卡密</string>
+    <string name="new_ui_input_key_charge_empty" translatable="false">卡密不能为空！</string>
+    <string name="new_ui_phone_not_null" translatable="false">手机号码不能为空！</string>
+    <string name="new_ui_recharge_record" translatable="false">充值记录</string>
+    <string name="new_ui_supply" translatable="false">供应商：</string>
+    <string name="new_ui_fengjin" translatable="false">封禁</string>
+    <string name="new_ui_forbidden" translatable="false">被封禁</string>
+    <string name="new_ui_recharge" translatable="false">充值</string>
+    <string name="new_ui_please_login" translatable="false">注册成功，请登录！</string>
+    <string name="new_ui_loginPrice_yj" translatable="false">一键授权：</string>
+    <string name="new_ui_loginPrice_qr" translatable="false">显码：</string>
+    <string name="new_ui_user_nick_name" translatable="false">昵称：</string>
+    <string name="new_ui_set_remark" translatable="false">请添加备注</string>
+    <string name="new_ui_please_set_money" translatable="false">请设定一个充值金额</string>
+    <string name="new_ui_bannedUser" translatable="false">您确定要封禁该用户吗？</string>
+    <string name="new_ui_not_bannedUser" translatable="false">您确定要解禁该用户吗？</string>
+    <string name="new_ui_balance" translatable="false">余额：</string>
+    <string name="new_ui_remark" translatable="false">备注：</string>
+    <string name="new_ui_login_exception" translatable="false">系统检测到您登陆异常，请重新登陆系统！</string>
+    <string name="new_ui_after_balance" translatable="false">充值后余额：</string>
+    <string name="new_ui_no_authority" translatable="false">暂无权限！</string>
+    <string name="new_ui_recharge_user_id" translatable="false">用户ID：</string>
+    <string name="new_ui_reduce" translatable="false">-</string>
+    <string name="new_ui_upgrade" translatable="false">升级成代理</string>
+    <string name="new_ui_upgrade_tip" translatable="false">您确定要升级该用户成为二级代理吗？</string>
+    <string name="new_ui_please_enter_nickName" translatable="false">请填写昵称！</string>
+    <string name="new_ui_copy_finished" translatable="false">已经复制到粘贴板了</string>
+    <string name="new_ui_agent_xg" translatable="false">代理相关</string>
+    <string name="new_ui_my_agent_tip" translatable="false">我的代理：</string>
+    <string name="new_ui_invite_code" translatable="false">邀请码：</string>
+    <string name="new_ui_upgrade_tips" translatable="false">代理的优势：\n1.您将会获得更优惠的充值折扣\n2.您可以给普通用户充值\n3.您可以拥有更高一级权限</string>
+    <string name="new_ui_connection_up_tips" translatable="false">\n\n请联系您的上级代理：</string>
+    <string name="new_ui_account_change_finish" translatable="false">账号类型切换完成！</string>
+    <string name="new_ui_account_change_title" translatable="false">切换账号类型</string>
+    <string name="new_ui_after_sale" translatable="false">点击头像申请售后，一天最多申请10次，请勿恶意申请，否则立即封禁，售后有效时间24小时</string>
+    <string name="ui_search_keys" translatable="false">搜索</string>
+    <string name="ui_create_child_tips" translatable="false">数量：</string>
+    <string name="ui_create_child_tips_hint" translatable="false">请输入要创建的子账户数量</string>
+    <string name="ui_create_child_title" translatable="false">创建子账户</string>
+    <string name="ui_auto_copy_accounts_tips" translatable="false">子账户已经自动拷贝到手机粘贴板中，请自行保存。</string>
+</resources>

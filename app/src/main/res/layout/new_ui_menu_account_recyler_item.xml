@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="xItemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+
+        <variable
+            name="accountBean"
+            type="com.wantime.wbangapp.model.AccountBean" />
+    </data>
+
+    <TextView
+        android:id="@+id/menuText"
+        style="@style/new_ui_account_item"
+        android:onClick="@{(view)->xItemClick.onItemClick(view,accountBean)}"
+        android:textColor="@{accountBean.select?@color/price_text_color4:@color/ui_item_ss_color}"
+        android:text="@{accountBean.title}" />
+</layout>

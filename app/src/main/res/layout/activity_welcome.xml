@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_parent_style">
+
+    <FrameLayout
+        android:id="@+id/adFrameLayout"
+        style="@style/match_parent_style"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <androidx.viewpager.widget.ViewPager
+            android:id="@+id/mViewPager"
+            style="@style/ui_platform_pager" />
+
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/jumpButton"-->
+        <!--            style="@style/ui_ad_text_style"-->
+        <!--            android:layout_gravity="right" />-->
+    </FrameLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/match_parent_style"
+        android:background="@color/white_text_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            style="@style/match_parent_style"
+            android:background="@mipmap/qidong_bg"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            style="@style/wrap_parent_style"
+            android:layout_marginTop="60dp"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:visibility="gone"
+            style="@style/wrap_parent_style"
+            android:layout_marginBottom="30dp"
+            android:src="@mipmap/qidong_logo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+        <TextView
+            android:id="@+id/jumpButton"
+            style="@style/ui_ad_text_style"
+            android:background="@null"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

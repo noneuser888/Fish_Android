@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="iItemBean"
+            type="com.wantime.wbangapp.model.bind.IRegisterBindBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/match_parent_style">
+
+        <LinearLayout
+            android:id="@+id/login_input_layout"
+            style="@style/ui_realname_linear_layout"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="40dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/loginName"
+                style="@style/ui_login_input_item_text"
+                android:drawableStart="@mipmap/zhanghao"
+                android:drawableLeft="@mipmap/zhanghao"
+                android:hint="@string/please_input_name"
+                android:inputType="text"
+                android:text="@={iItemBean.username}" />
+
+            <View
+                style="@style/match_parent_style"
+                android:layout_height="1px"
+                android:background="@color/gray_text_color3" />
+
+            <EditText
+                android:id="@+id/loginPass"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="1px"
+                android:drawableStart="@mipmap/queren"
+                android:drawableLeft="@mipmap/queren"
+                android:hint="@string/please_input_pass"
+                android:inputType="textPassword"
+                android:text="@={iItemBean.password}" />
+
+            <View
+                style="@style/match_parent_style"
+                android:layout_height="1px"
+                android:background="@color/gray_text_color3" />
+
+            <EditText
+                android:id="@+id/againPass"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="1px"
+                android:drawableStart="@mipmap/queren"
+                android:drawableLeft="@mipmap/queren"
+                android:hint="@string/please_input_pass_again"
+                android:inputType="textPassword" />
+
+            <View
+                style="@style/match_parent_style"
+                android:layout_height="1px"
+                android:background="@color/gray_text_color3" />
+
+            <EditText
+                android:id="@+id/ivCode"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="1px"
+                android:drawableStart="@mipmap/youxiang"
+                android:drawableLeft="@mipmap/youxiang"
+                android:hint="@string/please_input_iv_code"
+                android:text="@={iItemBean.inviteCode}" />
+
+            <View
+                style="@style/match_parent_style"
+                android:layout_height="1px"
+                android:background="@color/gray_text_color3" />
+
+            <LinearLayout
+                style="@style/wrap_parent_style"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/mCheckBox"
+                    style="@style/ui_realname_check_button" />
+
+                <TextView
+                    android:id="@+id/mCheckBoxTip"
+                    style="@style/ui_realname_check_text" />
+            </LinearLayout>
+
+
+            <Button
+                android:id="@+id/mSubmitButton"
+                style="@style/ui_real_input_button"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/register_text" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

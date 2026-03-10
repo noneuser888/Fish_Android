@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="xUserBean"
+            type="com.wantime.wbangapp.model.UserBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ui_common_wmatch_hwrap">
+
+        <include layout="@layout/ui_top_navigation_white" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/personInfoLayout"
+            style="@style/new_ui_agent_adpater_head_person_info"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+            <ImageView
+                android:id="@+id/userHeadImg"
+                style="@style/new_ui_main_adapter_head_img"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/headImgLine"
+                android:layout_width="1px"
+                android:layout_height="5dp"
+                app:layout_constraintBottom_toBottomOf="@+id/userHeadImg"
+                app:layout_constraintLeft_toRightOf="@+id/userHeadImg"
+                app:layout_constraintTop_toTopOf="@+id/userHeadImg" />
+
+            <TextView
+                android:id="@+id/userPhone"
+                style="@style/new_ui_main_adapter_head_text"
+                android:layout_marginStart="5dp"
+                android:layout_marginLeft="5dp"
+                android:text="@{xUserBean.phone}"
+                android:textColor="@color/new_personal_color"
+                app:layout_constraintBottom_toTopOf="@+id/headImgLine"
+                app:layout_constraintLeft_toRightOf="@+id/userHeadImg" />
+
+
+            <TextView
+                android:id="@+id/userNick"
+                style="@style/new_ui_main_adapter_head_text"
+                android:text="@{xUserBean.nickname}"
+                android:textColor="@color/new_copy_color"
+                app:layout_constraintLeft_toLeftOf="@+id/userPhone"
+                app:layout_constraintTop_toBottomOf="@+id/headImgLine" />
+
+
+            <TextView
+                android:id="@+id/userBalance"
+                style="@style/new_ui_main_adapter_head_text_balance"
+                android:layout_marginTop="20dp"
+                android:text="@{String.valueOf(xUserBean.balance)}"
+                android:textColor="@color/new_personal_color"
+                app:layout_constraintLeft_toLeftOf="@+id/userNick"
+                app:layout_constraintTop_toBottomOf="@+id/userNick" />
+
+
+            <TextView
+                android:id="@+id/userType"
+                style="@style/new_ui_main_adapter_head_text"
+                android:text="@{xUserBean.getUserLevel}"
+                android:textColor="@color/new_personal_color"
+                android:layout_marginEnd="25dp"
+                android:layout_marginRight="25dp"
+                app:layout_constraintBottom_toBottomOf="@+id/userBalance"
+                app:layout_constraintRight_toRightOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/userAccount"
+            style="@style/new_ui_agent_adapter_head_my_agent"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personInfoLayout" />
+
+        <com.wantime.wbangapp.ui.widget.FlowRadioGroup
+            android:id="@+id/rechargeGroup"
+            style="@style/new_ui_flow_radio_group"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/userAccount">
+
+            <RadioButton
+                android:id="@+id/rechargeItem1"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_10" />
+
+            <RadioButton
+                android:id="@+id/rechargeItem2"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_30" />
+
+            <RadioButton
+                android:id="@+id/rechargeItem3"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_50" />
+
+
+            <RadioButton
+                android:id="@+id/rechargeItem4"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_100" />
+
+            <RadioButton
+                android:id="@+id/rechargeItem5"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_500" />
+
+            <RadioButton
+                android:id="@+id/rechargeIte6"
+                style="@style/new_ui_recharge_value_item"
+                android:text="@string/new_ui_recharge_value_1000" />
+
+        </com.wantime.wbangapp.ui.widget.FlowRadioGroup>
+
+        <TextView
+            android:id="@+id/customValue"
+            style="@style/new_ui_agent_adapter_head_my_agent"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/new_ui_custom_value"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rechargeGroup" />
+
+        <EditText
+            android:id="@+id/rechargeValue"
+            style="@style/ui_login_input_item_text"
+            android:layout_width="200dp"
+            android:hint="@string/new_ui_entery_recharge"
+            android:inputType="numberSigned|phone"
+            app:layout_constraintLeft_toRightOf="@+id/customValue"
+            app:layout_constraintBottom_toBottomOf="@+id/customValue"
+            app:layout_constraintTop_toTopOf="@+id/customValue" />
+
+
+        <Button
+            android:id="@+id/rechargeButton"
+            style="@style/ui_login_input_button"
+            android:text="@string/new_ui_recharge_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rechargeValue" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

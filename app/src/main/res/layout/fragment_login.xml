@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="userBean"
+            type="com.wantime.wbangapp.model.bind.IBindUserBean" />
+
+
+        <variable
+            name="iItemBean"
+            type="com.wantime.wbangapp.model.bind.IRegisterBindBean" />
+
+        <variable
+            name="iFormPost"
+            type="com.wantime.wbangapp.ui.event.IFormListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/ui_login_style">
+
+        <CheckBox
+            android:id="@+id/uiSwitchButton"
+            style="@style/ui_switch_button"
+            app:layout_constraintLeft_toLeftOf="@+id/login_input_layout"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/login_input_layout"
+            style="@style/ui_login_input_style"
+            android:layout_marginTop="50dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiSwitchButton"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/loginName"
+                style="@style/ui_login_input_item_text"
+                android:autofillHints=""
+                android:drawableStart="@mipmap/user"
+                android:drawableLeft="@mipmap/user"
+                android:hint="@string/please_input_phone"
+                android:inputType="phone"
+                android:text="@={userBean.phone}" />
+
+            <EditText
+                android:id="@+id/loginPass"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="15dp"
+                android:autofillHints=""
+                android:drawableStart="@mipmap/mima"
+                android:drawableLeft="@mipmap/mima"
+                android:hint="@string/please_input_pass"
+                android:inputType="textPassword"
+                android:text="@={userBean.password}" />
+
+
+            <TextView
+                android:id="@+id/forgetView"
+                style="@style/ui_register_forget_text"
+                android:layout_gravity="right"
+                android:layout_marginTop="5dp"
+                android:text="@string/forget_text" />
+
+            <Button
+                android:id="@+id/mLogin"
+                style="@style/ui_login_input_button"
+                android:onClick="@{(view)->iFormPost.onFormPost(view,userBean)}"
+                android:text="@string/ui_login_text" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/register_input_layout"
+            style="@style/ui_login_input_style"
+            android:layout_marginTop="30dp"
+            android:visibility="gone"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiSwitchButton"
+            tools:ignore="MissingConstraints">
+
+            <EditText
+                android:id="@+id/loginPhone"
+                style="@style/ui_login_input_item_text"
+                android:drawableStart="@mipmap/user"
+                android:drawableLeft="@mipmap/user"
+                android:hint="@string/please_input_phone"
+                android:inputType="phone"
+                android:text="@={iItemBean.username}" />
+
+            <EditText
+                android:id="@+id/registerPass"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@mipmap/mima"
+                android:drawableLeft="@mipmap/mima"
+                android:hint="@string/please_input_pass"
+                android:inputType="textPassword"
+                android:text="@={iItemBean.password}" />
+
+            <EditText
+                android:id="@+id/registerPassAgain"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@mipmap/mima"
+                android:drawableLeft="@mipmap/mima"
+                android:hint="@string/please_input_pass_again"
+                android:inputType="textPassword"
+                android:text="@={iItemBean.passwordAgin}" />
+
+            <EditText
+                android:id="@+id/invitationCode"
+                style="@style/ui_login_input_item_text"
+                android:layout_marginTop="15dp"
+                android:drawableStart="@mipmap/yaoqingma"
+                android:drawableLeft="@mipmap/yaoqingma"
+                android:text="@={iItemBean.inviteCode}"
+                android:hint="@string/please_input_iv_code" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_common_wmatch_hwrap"
+                android:visibility="gone"
+                android:layout_marginTop="15dp">
+
+                <EditText
+                    android:id="@+id/verificationCode"
+                    style="@style/ui_login_input_item_text"
+                    android:drawableStart="@mipmap/yanzhengma"
+                    android:drawableLeft="@mipmap/yanzhengma"
+                    android:text="@={iItemBean.verifyCode}"
+                    android:hint="@string/please_input_vertify" />
+
+                <TextView
+                    android:id="@+id/vertifyTip"
+                    style="@style/wrap_parent_style"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginRight="8dp"
+                    android:text="@string/vertifyGet"
+                    android:textColor="@color/ui_item_select_color"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/registerButton"
+                style="@style/ui_login_input_button"
+                android:onClick="@{(view)->iFormPost.onFormPost(view,iItemBean)}"
+                android:text="@string/ui_register_text" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/mCheckBox"
+            style="@style/ui_login_protol_text"
+            android:text="@string/new_ui_protol_tip"
+            app:layout_constraintBottom_toTopOf="@+id/protolText1"
+            app:layout_constraintLeft_toLeftOf="@+id/protolText1"
+            app:layout_constraintRight_toRightOf="@+id/protolText1" />
+
+        <TextView
+            android:id="@+id/protolText1"
+            style="@style/ui_login_protol_text1"
+            android:layout_marginBottom="20dp"
+            android:text="@string/new_ui_protol"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

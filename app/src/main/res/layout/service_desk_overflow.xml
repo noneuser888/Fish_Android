@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/serviceTop"
+    style="@style/match_parent_style"
+    android:layout_width="200dp"
+    android:layout_height="200dp">
+
+    <include layout="@layout/ui_top_navigation" />
+
+    <ScrollView
+        style="@style/ui_wx_webview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+        <FrameLayout
+            style="@style/match_parent_style"
+            android:background="@color/white_text_color">
+
+            <com.tencent.mm.plugin.view.IWebView
+                android:id="@+id/wxWebview"
+                android:background="@color/bg_color"
+                style="@style/match_parent_style" />
+
+            <View
+                android:id="@+id/iWebCover"
+                style="@style/ui_cover_view" />
+        </FrameLayout>
+    </ScrollView>
+
+
+    <View
+        android:id="@+id/middleView"
+        android:layout_width="1px"
+        android:layout_height="0px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/uiWxOnLine"
+        style="@style/ui_wx_online"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNavigationBar" />
+
+
+    <LinearLayout
+        style="@style/ui_common_wmatch_hzero"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <TextView
+            android:id="@+id/wxKeyText"
+            style="@style/ui_wx_service_top_text"
+            android:text="@string/wx_key_text" />
+
+        <TextView
+            android:id="@+id/showQrText"
+            style="@style/ui_wx_service_top_text"
+            android:text="@string/wx_qr_text" />
+
+
+        <TextView
+            android:id="@+id/wxZsText"
+            style="@style/ui_wx_service_top_text"
+            android:text="@string/wx_zs_text" />
+    </LinearLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/zsLayout"
+        style="@style/ui_wx_zs_layout"
+        android:clickable="true"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+        <LinearLayout
+            style="@style/ui_wx_zs_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.wantime.wbangapp.ui.widget.LoadingView
+                android:id="@+id/mXLoadingView"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:background="#fefefe" />
+
+            <TextView
+                android:id="@+id/wxVerifiText"
+                style="@style/ui_wx_zs_content_text" />
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/ui_widget_search"
+    android:focusable="true"
+    android:focusableInTouchMode="true">
+
+    <View
+        android:id="@+id/backView"
+        android:layout_width="0dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mSearchButton"
+        style="@style/match_parent_style"
+        android:background="@drawable/ui_search_background" />
+
+    <ImageView
+        android:id="@+id/search_icon"
+        style="@style/ui_widget_search_icon"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/search_edit"
+        style="@style/ui_widget_search_text"
+        android:hint="@string/ui_search"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/search_icon"
+        app:layout_constraintRight_toRightOf="@+id/clearButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/clearButton"
+        style="@style/wrap_parent_style"
+        android:layout_marginEnd="5dp"
+        android:layout_marginRight="5dp"
+        android:src="@mipmap/nav_ic_close"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mSearchButton"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/mSearchButton"
+        style="@style/new_ui_search_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

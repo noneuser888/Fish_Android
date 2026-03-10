@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="xNewsBean"
+            type="com.wantime.wbangapp.model.NewsBean.ProjectBean" />
+
+        <variable
+            name="xItemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        style="@style/ui_authority_fragment_recycle_item"
+        android:onClick="@{(view)->xItemClick.onItemClick(view,xNewsBean)}">
+
+        <TextView
+            android:id="@+id/recycleTitle"
+            style="@style/ui_authority_fragment_recycle_item_title"
+            android:text="@{xNewsBean.title}"
+            app:layout_constraintBottom_toTopOf="@+id/middleLine"
+            app:layout_constraintLeft_toRightOf="@+id/recycleRightPic" />
+
+        <View
+            android:id="@+id/middleLine"
+            android:layout_width="1px"
+            android:layout_height="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/recycleRightPic"
+            app:layout_constraintLeft_toRightOf="@+id/recycleRightPic"
+            app:layout_constraintTop_toTopOf="@+id/recycleRightPic" />
+
+
+        <TextView
+            android:id="@+id/recycleTime"
+            style="@style/ui_authority_fragment_recycle_item_desc"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="@{xNewsBean.subTitle}"
+            app:layout_constraintLeft_toLeftOf="@+id/recycleTitle"
+            app:layout_constraintTop_toBottomOf="@+id/middleLine" />
+
+        <ImageView
+            android:id="@+id/recycleRightPic"
+            style="@style/ui_authority_fragment_recycle_item_pic"
+            app:imgPath="@{xNewsBean.imageUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

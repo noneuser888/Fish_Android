@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="iUserBean"
+            type="com.wantime.wbangapp.model.UserBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout style="@style/match_parent_style">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/personTop"
+            style="@style/ui_fragment_personal_all"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/mToolbar"
+                style="@style/ui_authority_fragment_toolbar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextAppearance="@style/Toolbar.TitleText" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contentLayout"
+                style="@style/ui_fragment_personal_all_content"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mToolbar">
+
+                <ImageView
+                    android:id="@+id/personIcon"
+                    style="@style/ui_fragment_personal_icon"
+                    android:src="@mipmap/my_img_portrait"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/personName"
+                    style="@style/ui_fragment_personal_name"
+                    android:text="@{iUserBean.username}"
+                    app:layout_constraintLeft_toRightOf="@+id/personIcon"
+                    app:layout_constraintTop_toTopOf="@+id/personIcon" />
+
+
+                <TextView
+                    android:id="@+id/keyPrice"
+                    style="@style/ui_fragment_personal_least_money"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@{@string/loginPrice_yj+iUserBean.balance}"
+                    app:layout_constraintLeft_toLeftOf="@+id/personIcon"
+                    app:layout_constraintTop_toBottomOf="@+id/personIcon" />
+
+                <TextView
+                    android:id="@+id/zsPrice"
+                    style="@style/ui_fragment_personal_least_money"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="@{@string/loginPrice_zs+iUserBean.exclusiveBalance}"
+                    app:layout_constraintBottom_toBottomOf="@+id/keyPrice"
+                    app:layout_constraintLeft_toRightOf="@+id/keyPrice" />
+
+                <TextView
+                    android:id="@+id/codePrice"
+                    style="@style/ui_fragment_personal_least_money"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:text="@{@string/loginPrice_Qr+iUserBean.qrCodeBalance}"
+                    app:layout_constraintBottom_toBottomOf="@+id/keyPrice"
+                    app:layout_constraintLeft_toRightOf="@+id/zsPrice" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            style="@style/ui_fragment_personal_recycle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/personTop" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="iDataBean"
+            type="com.wantime.wbangapp.model.bind.IPlatformBindBean" />
+
+        <variable
+            name="iFormPost"
+            type="com.wantime.wbangapp.ui.event.IFormListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/match_parent_style"
+        android:background="@color/gray_line_color">
+
+        <include layout="@layout/ui_top_navigation" />
+
+        <LinearLayout
+            style="@style/ui_common_wmatch_hwrap"
+            android:orientation="vertical"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+            <TextView
+                android:id="@+id/tipText"
+                style="@style/ui_iplatform_text_tip"
+                android:text="@string/ui_tip_platform_cause_tip" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    android:id="@+id/mTitleName"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_name"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/mNameValue"
+                    style="@style/ui_iplatform_input_title"
+                    android:hint="@string/ui_tip_platform_name"
+                    android:text="@={iDataBean.platformName}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/nameLayout"
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_nick"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    style="@style/ui_iplatform_input_title"
+                    android:enabled="false"
+                    android:hint="@string/ui_tip_platform_name"
+                    android:text="@={iDataBean.wxNickname}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/tipText">
+
+                <TextView
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_icon"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <ImageView
+                    style="@style/ui_platform_icon"
+                    app:imgPath="@{iDataBean.imageUrl}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/contractLayout"
+                style="@style/ui_iplatform_input_item"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/nameLayout">
+
+                <TextView
+                    android:id="@+id/mContractName"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_contract"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <EditText
+                    android:id="@+id/mContractValue"
+                    style="@style/ui_iplatform_input_title"
+                    android:hint="@string/ui_tip_contract"
+                    android:text="@={iDataBean.contact}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/typeLayout"
+                style="@style/ui_common_wmatch_hwrap"
+                android:layout_marginTop="10dp"
+                android:background="@color/white_text_color"
+                android:padding="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/contractLayout">
+
+                <TextView
+                    android:id="@+id/mTypeTitle"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_type"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <RadioGroup
+                    android:id="@+id/mGroup"
+                    style="@style/ui_iplatform_group"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mTypeTitle">
+
+                    <RadioButton
+                        android:id="@+id/loginType"
+                        style="@style/ui_iplatform_group_radio"
+                        android:checked='@{iDataBean.type.equals("1")}'
+                        android:text="@string/ui_platform_login" />
+
+                    <RadioButton
+                        android:id="@+id/authorityType"
+                        style="@style/ui_iplatform_group_radio"
+                        android:checked='@{iDataBean.type.equals("2")}'
+                        android:text="@string/ui_platform_proxy" />
+                </RadioGroup>
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                style="@style/ui_common_wmatch_hwrap"
+                android:layout_marginTop="10dp"
+                android:background="@color/white_text_color"
+                android:padding="10dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/typeLayout">
+
+                <TextView
+                    android:id="@+id/mInfoTitle"
+                    style="@style/ui_iplatform_input_title"
+                    android:text="@string/ui_platform_info"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    style="@style/ui_iplatform_edit_info"
+                    android:layout_marginTop="10dp"
+                    android:text="@={iDataBean.description}"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/mInfoTitle" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/mSubmit"
+            style="@style/ui_login_input_button"
+            android:layout_margin="10dp"
+            android:layout_marginBottom="50dp"
+            android:onClick="@{(view)->iFormPost.onFormPost(view,iDataBean)}"
+            android:text="@string/apply"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

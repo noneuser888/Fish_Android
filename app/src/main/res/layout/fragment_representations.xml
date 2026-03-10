@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/match_parent_style"
+        android:background="@color/white_text_color">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/mToolbar"
+            style="@style/ui_authority_fragment_toolbar"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tipText"
+            style="@style/ui_fragment_task_representations_tips"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mToolbar" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mRecyclerView"
+            style="@style/ui_fragment_representations_recycler"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tipText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

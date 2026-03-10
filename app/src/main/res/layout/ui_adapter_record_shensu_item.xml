@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="itemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+
+        <variable
+            name="itemBean"
+            type="com.wantime.wbangapp.model.AppealRecordBean.RecordsBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/ui_adapter_record_shensu_item">
+
+        <ImageView
+            android:id="@+id/recordIcon"
+            style="@style/ui_adapter_record_item_icon"
+            app:imgPath="@{itemBean.imageUrl}"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recordName"
+            style="@style/ui_adapter_record_item_name"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="@{itemBean.platformName}"
+            app:layout_constraintLeft_toRightOf="@+id/recordIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/recordNick"
+            style="@style/ui_adapter_record_item_desc"
+            android:textColor="@color/bg_login_color"
+            android:text='@{(itemBean.wxUserNickname.length>0)?(@string/ui_nick+itemBean.wxUserNickname):""}'
+            app:layout_constraintBottom_toBottomOf="@+id/recordIcon"
+            app:layout_constraintLeft_toLeftOf="@+id/recordName" />
+
+        <TextView
+            android:id="@+id/recordType"
+            style="@style/ui_adapter_record_item_desc"
+            app:layout_constraintLeft_toLeftOf="@+id/recordIcon"
+            app:layout_constraintTop_toBottomOf="@+id/recordIcon" />
+
+        <TextView
+            android:id="@+id/recordTime"
+            style="@style/ui_adapter_record_item_desc"
+            android:text="@{itemBean.createTime}"
+            app:layout_constraintLeft_toLeftOf="@+id/recordType"
+            app:layout_constraintTop_toBottomOf="@+id/recordType" />
+
+        <TextView
+            android:id="@+id/recordReason"
+            android:text='@{(itemBean.description.length>0)?(@string/ui_nick+itemBean.description):""}'
+            style="@style/ui_adapter_record_item_desc"
+            app:layout_constraintLeft_toLeftOf="@+id/recordType"
+            app:layout_constraintTop_toBottomOf="@+id/recordTime" />
+
+        <TextView
+            android:id="@+id/recordReject"
+            style="@style/ui_adapter_record_item_desc"
+            android:text='@{(itemBean.failureReason.length>0)?(@string/ui_nick+itemBean.failureReason):""}'
+            app:layout_constraintLeft_toLeftOf="@+id/recordType"
+            app:layout_constraintTop_toBottomOf="@+id/recordReason" />
+
+
+        <TextView
+            android:id="@+id/recordPrice"
+            style="@style/ui_adapter_record_item_name"
+            android:text="@{@string/ui_price_front+String.valueOf(itemBean.price)}"
+            android:textColor="@color/price_text_color"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recordIcon" />
+
+
+        <TextView
+            android:id="@+id/recordFailed"
+            style="@style/ui_adapter_record_item_name"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="@string/ui_shensu_failed"
+            android:background="@drawable/ui_shensu_failed_drawable"
+            android:textColor="@color/white_text_color"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/recordType" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_parent_style"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <ImageView
+        android:id="@+id/navIcon"
+        style="@style/wrap_parent_style"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/mNavText"
+        style="@style/ui_bottom_nav_item"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:layout_marginTop="1dp"
+        android:textAllCaps="false" />
+</LinearLayout>

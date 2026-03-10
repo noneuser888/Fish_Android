@@ -1,0 +1,2 @@
+rootProject.name='WBangAPP'
+include ':app',':filepicker',':update',':DateSelecter'

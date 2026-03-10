@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="iItemBean"
+            type="com.wantime.wbangapp.model.bind.IPepresentBean" />
+    </data>
+
+    <LinearLayout
+        style="@style/match_parent_style"
+        android:orientation="vertical">
+
+        <include layout="@layout/ui_top_navigation" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/mLayout"
+            style="@style/ui_common_wmatch_hwrap"
+            android:background="@color/white_text_color"
+            android:padding="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mNavigationBar">
+
+            <TextView
+                android:id="@+id/taskTitle"
+                style="@style/ui_appeal_form_submit_title"
+                android:text="@string/ui_appeal_task_id"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/taskIDValue"
+                style="@style/ui_appeal_form_submit_title_value"
+                android:text="@={iItemBean.authOrderId}"
+                app:layout_constraintBottom_toBottomOf="@+id/taskTitle"
+                app:layout_constraintLeft_toRightOf="@+id/taskTitle"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <View
+                android:id="@+id/lineView1"
+                style="@style/ui_appeal_form_line"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskTitle" />
+
+            <TextView
+                android:id="@+id/taskReasonTitle"
+                style="@style/ui_appeal_form_submit_title"
+                android:layout_marginTop="10dp"
+                android:gravity="top"
+                android:text="@string/ui_appeal_task_reason"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineView1" />
+
+            <EditText
+                android:id="@+id/taskReasonValue"
+                style="@style/ui_appeal_form_submit_title_value"
+                android:layout_height="80dp"
+                android:gravity="top"
+                android:text="@={iItemBean.description}"
+                android:hint="@string/ui_appeal_task_hint"
+                app:layout_constraintLeft_toRightOf="@+id/taskReasonTitle"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/taskReasonTitle" />
+
+            <View
+                android:id="@+id/lineView2"
+                style="@style/ui_appeal_form_line"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/taskReasonValue" />
+
+            <LinearLayout
+                android:id="@+id/appealImgs"
+                style="@style/wrap_parent_style"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lineView2">
+
+                <ImageView
+                    android:id="@+id/addButton"
+                    style="@style/ui_appeal_add_button"
+                    android:src="@mipmap/addimg" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/submitButton"
+                style="@style/ui_appeal_button"
+                android:layout_marginTop="40dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/appealImgs" />
+
+            <TextView
+                android:id="@+id/appealResult"
+                style="@style/ui_appeal_result"
+                android:layout_marginTop="2dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/submitButton" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/uiAppealTips"
+            style="@style/ui_appeal_tips" />
+
+
+    </LinearLayout>
+</layout>

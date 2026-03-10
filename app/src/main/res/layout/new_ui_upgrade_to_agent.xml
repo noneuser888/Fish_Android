@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+
+    <data>
+
+        <variable
+            name="xUserBean"
+            type="com.wantime.wbangapp.model.UserBean" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        style="@style/match_parent_style">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/headLayout"
+            style="@style/ui_common_wmatch_hwrap"
+            android:background="@color/new_become_agent_end_color"
+            android:paddingTop="10dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/menuBack"
+                style="@style/new_ui_navigation_back"
+                android:src="@mipmap/nav_ic_back"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/new_ui_navigation_title"
+                android:text="@string/new_ui_agent_xg"
+                android:textColor="@color/main_text_color"
+                app:layout_constraintBottom_toBottomOf="@+id/menuBack"
+                app:layout_constraintLeft_toRightOf="@+id/menuBack"
+                app:layout_constraintTop_toTopOf="@+id/menuBack" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/personInfoLayout"
+                style="@style/new_ui_agent_adpater_head_agent_info"
+                android:layout_marginTop="20dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/menuBack">
+
+                <ImageView
+                    android:id="@+id/userHeadImg"
+                    style="@style/new_ui_main_adapter_head_img"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/headImgLine"
+                    android:layout_width="1px"
+                    android:layout_height="5dp"
+                    app:layout_constraintBottom_toBottomOf="@+id/userHeadImg"
+                    app:layout_constraintLeft_toRightOf="@+id/userHeadImg"
+                    app:layout_constraintTop_toTopOf="@+id/userHeadImg" />
+
+                <TextView
+                    android:id="@+id/userPhone"
+                    style="@style/new_ui_main_adapter_head_text"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:text="@{xUserBean.phone}"
+                    android:textColor="@color/new_personal_color"
+                    app:layout_constraintBottom_toTopOf="@+id/headImgLine"
+                    app:layout_constraintLeft_toRightOf="@+id/userHeadImg" />
+
+
+                <TextView
+                    android:id="@+id/userNick"
+                    style="@style/new_ui_main_adapter_head_text"
+                    android:textColor="@color/new_personal_color"
+                    android:text='@{xUserBean.nickname+"  "+xUserBean.getUserLevel()}'
+                    app:layout_constraintLeft_toLeftOf="@+id/userPhone"
+                    app:layout_constraintTop_toBottomOf="@+id/headImgLine" />
+
+
+                <TextView
+                    android:id="@+id/userBalance"
+                    style="@style/new_ui_main_adapter_head_text_balance"
+                    android:text="@{String.valueOf(xUserBean.balance)}"
+                    android:textColor="@color/new_personal_color"
+                    app:layout_constraintBottom_toBottomOf="@+id/userNick"
+                    app:layout_constraintRight_toRightOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/userAgent"
+                    style="@style/new_ui_main_adapter_head_text"
+                    android:layout_marginTop="20dp"
+                    android:text='@{@string/new_ui_my_agent_tip+xUserBean.myAgencyNickname}'
+                    android:textColor="@color/new_personal_color"
+                    app:layout_constraintLeft_toLeftOf="@+id/userNick"
+                    app:layout_constraintTop_toBottomOf="@+id/userNick" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <TextView
+            android:id="@+id/agentTip"
+            style="@style/new_ui_become_agent_tip"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/headLayout" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

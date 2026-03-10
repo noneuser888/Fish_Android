@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/match_parent_style">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mToolbar"
+        style="@style/new_ui_authority_fragment_toolbar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <FrameLayout
+        style="@style/ui_wx_webview"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mToolbar">
+
+        <com.tencent.mm.plugin.view.IWebView
+            android:id="@+id/wxWebview"
+            style="@style/match_parent_style" />
+
+        <ImageView
+            android:id="@+id/iQrImageView"
+            style="@style/ui_cover_view1" />
+
+        <View
+            android:id="@+id/iWebCover"
+            style="@style/ui_cover_view" />
+    </FrameLayout>
+
+    <View
+        android:id="@+id/middleView"
+        android:layout_width="1px"
+        android:layout_height="0px"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/uiWxOnLine"
+        style="@style/ui_wx_online"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/middleView" />
+
+
+    <LinearLayout
+        android:id="@+id/optionMenu"
+        style="@style/ui_common_wmatch_hwrap"
+        android:layout_marginBottom="30dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+
+            <RadioButton
+                android:id="@+id/radioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:checked="true"
+                android:text="日(0.0)" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="周(0.0)" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="月(0.0)" />
+        </RadioGroup>
+        <TextView
+            android:id="@+id/wxKeyText"
+            style="@style/ui_wx_key_button"
+            android:drawableTop="@mipmap/yijianshouquan"
+            android:text="@string/wx_key_text" />
+
+        <TextView
+            android:id="@+id/wxKeyText1"
+            style="@style/ui_wx_key_button"
+            android:drawableTop="@mipmap/laohao"
+            android:text="@string/wx_key_text1" />
+
+        <TextView
+            android:id="@+id/fusText"
+            android:drawableTop="@mipmap/fusao"
+            style="@style/ui_wx_key_button"
+            android:text="@string/wx_zs_text" />
+
+        <TextView
+            android:id="@+id/showQrText"
+            style="@style/ui_wx_key_button"
+            android:drawableTop="@mipmap/xianma"
+            android:text="@string/wx_qr_text" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

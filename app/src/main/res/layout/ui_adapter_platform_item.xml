@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="iBean"
+            type="com.wantime.wbangapp.model.PlatformBean.PlatformListBean" />
+
+        <variable
+            name="xItemClick"
+            type="com.wantime.wbangapp.ui.adapter.RecyclerItemClick" />
+
+        <variable
+            name="xFormClick"
+            type="com.wantime.wbangapp.ui.event.IFormListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/ui_platform_fragment_recycle_item"
+        android:onClick="@{(view)->xItemClick.onItemClick(view,iBean)}">
+
+        <ImageView
+            android:id="@+id/mItemLogo"
+            style="@style/ui_platform_fragment_recycle_item_logo"
+            app:imgPath="@{iBean.imageUrl}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/mItemTitle"
+            style="@style/ui_platform_fragment_recycle_item_name"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:text="@{iBean.nickname}"
+            app:layout_constraintLeft_toRightOf="@+id/mItemLogo"
+            app:layout_constraintTop_toTopOf="@+id/mItemLogo" />
+
+
+        <TextView
+            android:id="@+id/channelText"
+            style="@style/ui_platform_fragment_recycle_item_name"
+            android:textSize="@dimen/font_size_11"
+            android:layout_marginTop="2dp"
+            android:text="@{@string/new_ui_supply+iBean.channel}"
+            app:layout_constraintTop_toBottomOf="@+id/mItemTitle"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemTitle" />
+
+        <TextView
+            android:id="@+id/priceText1"
+            app:layout_constraintLeft_toLeftOf="@+id/mItemTitle"
+            app:layout_constraintTop_toBottomOf="@+id/channelText"
+            style="@style/ui_platform_fragment_recycle_item_desc"
+            android:layout_marginTop="2dp"
+            android:text='@{@string/new_ui_loginPrice_yj+iBean.price+"     "+@string/new_ui_loginPrice_qr+iBean.qrPrice}'/>
+
+        <Button
+            android:id="@+id/mItemSaoMa"
+            android:onClick="@{(view)->xFormClick.onFormPost(view,iBean)}"
+            style="@style/ui_platform_fragment_recycle_item_name"
+            android:text="@string/saoma"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
