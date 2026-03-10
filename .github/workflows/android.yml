@@ -1,0 +1,72 @@
+name: Android Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'  # 当推送带有v开头的tag时触发，例如 v1.0.0
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'corretto'
+          java-version: '8'
+          cache: gradle
+      
+      - name: Grant execute permission for gradlew
+        run: chmod +x ./gradlew
+        
+      - name: Check Android Gradle Plugin Version
+        run: |
+          echo "项目配置的 Android Gradle Plugin 版本:"
+          grep -r "com.android.tools.build:gradle:" --include="build.gradle" .
+          
+          echo "实际使用的 Gradle 版本:"
+          ./gradlew --version
+      
+      - name: Verify Android Gradle Plugin Version
+        run: |
+          AGP_VERSION=$(grep -r "com.android.tools.build:gradle:" --include="build.gradle" . | grep -o '[0-9]*\.[0-9]*\.[0-9]*')
+          echo "检测到的 Android Gradle Plugin 版本: $AGP_VERSION"
+          if [[ "$AGP_VERSION" != "4.2.1" ]]; then
+            echo "警告: Android Gradle Plugin 版本不是预期的 4.2.1"
+            echo "请检查 build.gradle 文件中的版本设置"
+          else
+            echo "版本检查通过: Android Gradle Plugin 版本是 4.2.1"
+          fi
+        
+      - name: Build APK
+        run: ./gradlew assembleRelease
+      
+      - name: Sign APK
+        uses: r0adkll/sign-android-release@v1
+        id: sign_app
+        with:
+          releaseDirectory: app/build/outputs/apk/release
+          signingKeyBase64: ${{ secrets.SIGNING_KEY }}
+          alias: ${{ secrets.KEY_ALIAS }}
+          keyStorePassword: ${{ secrets.KEY_STORE_PASSWORD }}
+          keyPassword: ${{ secrets.KEY_PASSWORD }}
+        env:
+          BUILD_TOOLS_VERSION: "30.0.2"
+      
+      - name: Rename APK
+        run: |
+          mv ${{steps.sign_app.outputs.signedReleaseFile}} app-release-${{github.ref_name}}.apk
+      
+      - name: Create Release
+        id: create_release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: app-release-${{github.ref_name}}.apk
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.WECHAT_TOKEN }}
