@@ -22,6 +22,8 @@ buildscript {
         //字符串加密
         classpath 'com.github.megatronking.stringfog:gradle-plugin:2.2.1'
         classpath 'com.github.megatronking.stringfog:xor:1.1.0'
+        implementation 'androidx.appcompat:appcompat:1.6.1'
+        implementation 'com.google.android.material:material:1.11.0'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
