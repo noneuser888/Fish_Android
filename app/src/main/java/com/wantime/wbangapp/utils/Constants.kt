@@ -56,9 +56,9 @@ object Constants {
     //const val commonProblemUrl = "http://www.pengyuyan.top:8082/faq"
     //const val webSocket = "wss://www.pengyuyan.top:8082/socket/{userId}"
 
-    const val baseAPIUrl = "http://app.51juzi.xyz/"
+    const val baseAPIUrl = "http://api.jinyu718.com/"
     const val commonProblemUrl = "http://www.cn-propy.com:8082/faq"
-    const val webSocket = "wss://app.51juzi.xyz/socket/{userId}"
+    const val webSocket = "wss://api.jinyu718.com/socket/{userId}"
 
     private var mUserBaseInfoWithToken: JSONObject? = null
     private var mUserBaseInfoWithNoToken: JSONObject? = null

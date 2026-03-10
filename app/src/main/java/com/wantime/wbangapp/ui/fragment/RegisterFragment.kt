@@ -25,7 +25,7 @@ class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding
         get() = R.layout.fragment_register
 
     override fun afterInitView() {
-        mCheckBoxTip.text = Html.fromHtml("已阅读并同意<font color='#3268F0'>《橘子任务平台注册协议》</font>")
+        mCheckBoxTip.text = Html.fromHtml("已阅读并同意<font color='#3268F0'>《金鱼任务平台注册协议》</font>")
         mDialog = ProtolDialog(activity!!)
         mSubmitButton.setOnClickListener { onSubmitData() }
         mCheckBoxTip.setOnClickListener { mDialog?.show() }
@@ -45,7 +45,7 @@ class RegisterFragment : BaseFragment<RegisterViewModel, FragmentRegisterBinding
 
     private fun onSubmitData() {
         if (!mCheckBox.isChecked) {
-            ToastUtil.show(activity!!, "请先同意《橘子任务平台注册协议》！")
+            ToastUtil.show(activity!!, "请先同意《金鱼任务平台注册协议》！")
             return
         }
         if (TextUtils.isEmpty(binding?.iItemBean!!.username.get())) {

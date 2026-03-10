@@ -16,7 +16,7 @@ android {
     buildToolsVersion "29.0.3"
 
     defaultConfig {
-        applicationId "com.wantime.wbangapp.juzi"//"com.wantime.wbangapp"
+        applicationId "com.wantime.wbangapp.jinyu"//"com.wantime.wbangapp"
         minSdkVersion 16 //16_4.1 15_4.0.3 14_4.0 10_2.3.3
         //noinspection ExpiredTargetSdkVersion
         targetSdkVersion 29
@@ -51,7 +51,7 @@ android {
 
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
-            def newApkName = "juzi.apk";
+            def newApkName = "jinyu.apk";
             outputFileName = newApkName;
         }
     }

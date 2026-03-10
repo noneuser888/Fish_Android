@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name" translatable="false">橘子</string>
+    <string name="app_name" translatable="false">金鱼</string>
     <string-array name="app_nav">
-        <item>橘子授权</item>
+        <item>金鱼授权</item>
         <item>平台列表</item>
         <item>我的</item>
     </string-array>
@@ -59,7 +59,7 @@
     <string name="todayMore" translatable="false">查看更多</string>
     <string name="saoma" translatable="false">扫码</string>
     <string name="cause" translatable="false">教程</string>
-    <string name="wei_cause" translatable="false">橘子教程</string>
+    <string name="wei_cause" translatable="false">金鱼教程</string>
     <string name="apply" translatable="false">申请</string>
 
     <string name="platformlist" translatable="false">平台列表</string>
@@ -88,7 +88,7 @@
     <string name="ui_tip_platform_name" translatable="false">请输入平台名字</string>
     <string name="ui_tip_contract" translatable="false">请输入联系方式，QQ/微信</string>
     <string name="ui_tip_platform_info_tip" translatable="false">请输入关于该平台的简要描述，同时请尽量提供下载链接，以便客服添加。</string>
-    <string name="ui_tip_platform_cause_tip" translatable="false">打开您需要授权的App----->微信授权----->一键授权----->橘子自动采集新平台的信息----->申请添加。</string>
+    <string name="ui_tip_platform_cause_tip" translatable="false">打开您需要授权的App----->微信授权----->一键授权----->金鱼自动采集新平台的信息----->申请添加。</string>
 
     <string name="confirm" translatable="false">确认</string>
     <string name="close" translatable="false">关闭</string>
@@ -150,9 +150,9 @@
     <string name="ui_zs_waiting" translatable="false">请耐心等待任务被接受....</string>
     <string name="ui_nee_over_tips" translatable="false">请开启弹窗！</string>
     <string name="ui_tip_jump" translatable="false">点击跳过</string>
-    <string name="ui_weibang_xp" translatable="false">此应用仅支持Root版本,请下载安装（橘子XP版本）！</string>
+    <string name="ui_weibang_xp" translatable="false">此应用仅支持Root版本,请下载安装（金鱼XP版本）！</string>
     <string name="ui_system_title" translatable="false">系统提示</string>
-    <string name="ui_platform_no_exist" translatable="false">当前尚未被橘子收录，您可以申请开通此应用！</string>
+    <string name="ui_platform_no_exist" translatable="false">当前尚未被金鱼收录，您可以申请开通此应用！</string>
     <string name="ui_platform_name_tips" translatable="false">请填写平台名称！</string>
     <string name="ui_platform_contract_tips" translatable="false">请留下您的联系方式！</string>
     <string name="w3" translatable="false">分享</string>
