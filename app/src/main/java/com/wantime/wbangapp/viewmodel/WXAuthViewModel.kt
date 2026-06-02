@@ -47,9 +47,10 @@ class WXAuthViewModel(application: Application) : BaseViewModel(application) {
     }
 
     //显示二维码扣费接口
-    fun onQRCodeAuth(): MutableLiveData<PostBackBean> {
+    fun onQRCodeAuth(appId: String): MutableLiveData<PostBackBean> {
         val liveData: MutableLiveData<PostBackBean> = MutableLiveData<PostBackBean>()
         val formBean = FormPostBean()
+        formBean.appId = appId
         RetrofitManager.getInstance().apiRequest.onQRCodeAuth(formBean)
             .subscribeOn(Schedulers.io()).flatMap {
                 val itemBean = PostBackBean()

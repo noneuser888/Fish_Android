@@ -684,7 +684,7 @@ class IWxPluginView constructor(
 
     //二维码扣费成功后调用
     private fun onQRCodeAuth() {
-        mViewModel?.onQRCodeAuth()?.observe(mLifeOwner, androidx.lifecycle.Observer {
+        mViewModel?.onQRCodeAuth(appId!!)?.observe(mLifeOwner, androidx.lifecycle.Observer {
             authOrderId = it.authOrderId
             onUpdateRecord()
             if (TextUtils.isEmpty(authOrderId)) {
